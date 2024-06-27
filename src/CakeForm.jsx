@@ -4,8 +4,7 @@ const CakeForm = ({cakes, setCakes}) => {
 
     const [cakeName, setCakeName] = useState("")
     const [ingredients, setIngredients] = useState([])
-    const [currentIngredient, setCurrentIngredient] = useState("");
-    const [rating, setRating] = useState("")
+    const [rating, setRating] = useState(0)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +20,7 @@ const CakeForm = ({cakes, setCakes}) => {
             <label htmlFor="ingredients">Ingredients:</label>
             <textarea cols="30" rows="1" id="ingredients" name="ingredients" placeholder="Enter ingredients..." value={ingredients} onChange={(e) => setIngredients(e.target.value.split(","))}></textarea>
             <label htmlFor="rating">Rating:</label>
-            <input type="number" id="rating" min={1} max={5} name="rating" placeholder="Enter rating..." value={rating} onChange={(e) => setRating(e.target.value)}/>
+            <input type="number" id="rating" min={1} max={5} name="rating" placeholder="Enter rating..." value={rating} onChange={(e) => setRating(Number(e.target.value))}/>
             <input type="submit"/>
         </form>
     )
