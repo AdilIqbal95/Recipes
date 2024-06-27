@@ -14,7 +14,7 @@ function App() {
       </header>
       <main>
         <RecipeListContainer />
-        <Search />
+        {/* <Search /> */}
       </main>
     </>
   );
